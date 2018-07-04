@@ -17,8 +17,16 @@
 	<script src="./js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript">
-    function postDate(url, jsonData){
+    function postDate(url, jsonDataUrl){
+      $.get(jsonDataUrl, function(data, status){
+        console.log(data);
+        document.location.href=url+"?"+JSON.stringify(data);
+      });
       
+      //$.get(url,jsonData);
+      //document.location.href=url;
+      
+
     }
   </script>
 </head>
@@ -85,7 +93,7 @@
               <td><a href="網址"><img class="d-block w-100" src="./pic/四斗底.png"></a></td>
               <td><a href="網址"><img class="d-block w-100" src="./pic/雙鑰匙頭.png"></a></td>
               <td><a href="網址"><img class="d-block w-100" src="./pic/丁字.png"></a></td>
-              <td><a href="https://keepcrashing.github.io/L-System/"><img class="d-block w-100" src="./pic/卍字.png"></a></td>
+              <td><a href="javascript: void(0)" onclick="postDate('https://keepcrashing.github.io/L-System/','https://keepcrashing.github.io/WindingStream/example/WAN.json');"><img class="d-block w-100" src="./pic/卍字.png"></a></td>
               <td><a href="網址"><img class="d-block w-100" src="./pic/單鑰匙頭.png"></a></td>
             </tr>
           </tbody>
