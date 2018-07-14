@@ -20,7 +20,7 @@
     function postDate(url, jsonDataUrl){
       $.get(jsonDataUrl, function(data, status){
         console.log(data);
-        document.location.href=url+"?"+JSON.stringify(data);
+        document.location.href=url+"?"+btoa(JSON.stringify(data));
       });
       
       //$.get(url,jsonData);
